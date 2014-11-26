@@ -1,0 +1,24 @@
+/*********************
+Use SASS to write your CSS
+SASS files are:
+
+main.scss
+which will import:
+
+normalize.scss
+variables.scss
+mixins.scss
+sticky-footer.scss
+
+You may divide your sass into addition files as you wish.
+Eg: 
+- grid.scss
+- buttons.scss
+*********************/
+
+@mixin test($fs, $clr:blue, $box...){ //... means may have bunch of string
+  outline: 1px soldi $clr;
+  font-size: $fs;
+  box-shadow:$box;
+}
+
