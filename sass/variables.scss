@@ -1,18 +1,16 @@
-/*********************
-Use SASS to write your CSS
-SASS files are:
+//Responsive screens
+$breakpoint-mobile: 300px;
+$breakpoint-small: 600px;
+$breakpoint-medium: 800px;
+$breakpoint-large: 960px;
 
-main.scss
-which will import:
+//$wrapper-universal-margin:0%;
+$wrapper-width:100%;
 
-normalize.scss
-variables.scss
-mixins.scss
-sticky-footer.scss
+$saperator-margin:2%;
 
-You may divide your sass into addition files as you wish.
-Eg: 
-- grid.scss
-- buttons.scss
-*********************/
+$header-width:96%;
 
+$col-3-width:30.6%;
+
+$col-4-width:22.5%;
