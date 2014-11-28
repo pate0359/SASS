@@ -14,7 +14,8 @@
   color: #dddddd;
   padding-bottom: 1px;
   padding-top: 1px;
-  font-family: "Nova Mono"; }
+  font-family: "Nova Mono";
+  box-shadow: 0 0 5px #fff; }
 
 .focal {
   height: auto; }
@@ -261,7 +262,8 @@ html {
   height: 50px;
   background-color: #484848;
   color: #dddddd;
-  font-family: "Nova Mono"; }
+  font-family: "Nova Mono";
+  border-top: 1px solid #fff; }
 
 /* =========== normalize style =========== */
 article,
