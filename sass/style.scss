@@ -284,7 +284,8 @@
 //}
 
 @media screen and (min-width:800){
-  .col-40
+  .col-4
+	{
 	  @include fMargin;
 	  width: 30%; 
 	  padding-top: 2%;
