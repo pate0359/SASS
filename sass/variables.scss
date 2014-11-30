@@ -1,8 +1,15 @@
 //Responsive screens
-$breakpoint-mobile: 300px;
-$breakpoint-small: 600px;
-$breakpoint-medium: 800px;
+//$breakpoint-mobile: 300px;
+//$breakpoint-small: 600px;
+$breakpoint-medium: 700px;
 $breakpoint-large: 960px;
+
+//Color
+$greyLike:#484848;
+$greenLike:rgba(60,155,102,0.7);
+$blueLike:rgba(95,152,198,0.9);
+$whiteLike:whitesmoke;
+
 
 //$wrapper-universal-margin:0%;
 $wrapper-width:100%;

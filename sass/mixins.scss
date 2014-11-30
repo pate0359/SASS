@@ -11,120 +11,34 @@
 	font-family: 'Nova Mono', ;
 }
 
-@mixin gradient-col3()
-{
-	background: -webkit-linear-gradient(right, #646060, #3c9b66); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #646060, #3c9b66); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #646060, #3c9b66); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(right, #646060, #3c9b66); /* Standard syntax (must be last) */
-}
-
-@mixin gradient-col4()
-{
-	background: -webkit-linear-gradient(right, #646060, #5f98c6); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #646060, #5f98c6); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #646060, #5f98c6); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(right, #646060, #5f98c6); /* Standard syntax (must be last) */
-}
-
-
-@mixin buttonGradient()
-{
-	background: #c1bdb7;
-	background: -moz-linear-gradient(top,#c1bdb7 0%,#646060 100%);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#c1bdb7),color-stop(100%,#646060));
-	background: -webkit-linear-gradient(top,#c1bdb7 0%,#646060 100%);
-	background: -o-linear-gradient(top,#c1bdb7 0%,#646060 100%);
-	background: -ms-linear-gradient(top,#c1bdb7 0%,#646060 100%);
-	background: linear-gradient(top,#25A6E1 0%,#188BC0 100%);
-//	filter: (progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1bdb7',endColorstr='#646060',GradientType=0));
-	padding:8px 13px;
-	color:#fff;
-	font-family:'Helvetica Neue',sans-serif;
-	font-size:15px;
-	border-radius:4px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-//	border:1px solid #c1bdb7;
-	
-	@include pagefont;
-	
-//	height:2em;
-//	padding:15px 50px;
-//	margin:20px 40px;
-//	cursor:pointer;
-//	display:inline-block;
-//	color:#FFF;
-//	font-size:1em;
-//	border:1px solid #eee;
-//	background:#eee;
-//	border-radius:4px;
-//	line-height:2em;
-//	border:1px solid #aaa;
-//	text-decoration:none;
-//		
-//	-webkit-transition: all 0.3s linear;
-//     -khtml-transition: all 0.3s linear;
-//       -moz-transition: all 0.3s linear;
-//         -o-transition: all 0.3s linear;
-//            transition: all 0.3s linear;
-}
-
 @mixin fade-transition($element) {
-	-webkit-transition: $element 0.25s ease-in-out;
-	-moz-transition: $element 0.25s ease-in-out;
-	-ms-transition: $element 0.25s ease-in-out;
-	-o-transition: $element 0.25s ease-in-out;
-	transition: $element 0.25s ease-in-out;
+	-webkit-transition: $element 0.3s ease-in-out;
+	-moz-transition: $element 0.3s ease-in-out;
+	-ms-transition: $element 0.3s ease-in-out;
+	-o-transition: $element 0.3s ease-in-out;
+	transition: $element 0.3s ease-in-out;
 }
 
-@mixin divShineEffect()
+@mixin swingAnimation()
 {
-//	position: absolute;
-		opacity: 1;
-		top: 0;
-		left: 0;
-  
-/*   gradient   */
-		background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.03) 1%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.85) 70%, rgba(255,255,255,0.85) 71%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(1%,rgba(255,255,255,0.03)), color-stop(30%,rgba(255,255,255,0.85)), color-stop(50%,rgba(255,255,255,0.85)), color-stop(70%,rgba(255,255,255,0.85)), color-stop(71%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* IE10+ */
-		background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.03) 1%,rgba(255,255,255,0.6) 30%,rgba(255,255,255,0.85) 50%,rgba(255,255,255,0.85) 70%,rgba(255,255,255,0.85) 71%,rgba(255,255,255,0) 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
-    
-/*  forming the shine element
-    play around with the width, skew and gradient to get different effects
-  */
-		width: 15%;
-		height: 10%;
-     transform: skew(-10deg,0deg);
-		-webkit-transform: skew(-10deg,0deg);
-     -moz-transform: skew(-10deg,0deg);
-     -ms-transform: skew(-10deg,0deg);
-     -o-transform: skew(-10deg,0deg);
-  
-/*  animating it  */
-     animation: move 2s;
-		animation-iteration-count: infinite;
-		animation-delay: 1s;
-		-webkit-animation: move 2s;
-		-webkit-animation-iteration-count: infinite;
-		-webkit-animation-delay: 1s;
-		-moz-transform: skew(-10deg,0deg);
-		-moz-animation: move 2s;
-		-moz-animation-iteration-count: infinite;
-		-moz-animation-delay: 1s;
-		-ms-transform: skew(-10deg,0deg);
-		-ms-animation: move 2s;
-		-ms-animation-iteration-count: infinite;
-		-ms-animation-delay: 1s;
-		-o-transform: skew(-10deg,0deg);
-		-o-animation: move 2s;
-		-o-animation-iteration-count: infinite;
-		-o-animation-delay: 1s;
+	//Animation delay
+			animation-delay: 0.05s;
+			-webkit-animation-delay: 0.05s;
+			-moz-animation-delay: 0.05s;
+			animation-delay: 0.05s;
+
+			//Add key frame animation for swinging
+			-webkit-animation:swinging 1s ease-in-out 0s infinite;
+			-moz-animation:swinging 1s ease-in-out 0s infinite;
+			animation:swinging 1s ease-in-out 0s infinite;
+			-webkit-transform-origin:50% 0;
+			-moz-transform-origin:50% 0;
+			transform-origin:50% 0;
+
+			//Run the keyframe animation only once
+			-webkit-animation: swinging 0.5s normal forwards; 
+			-moz-animation:  swinging 0.5s normal forwards;
+			-o-animation:  swinging 0.5s normal forwards;
+
+	
 }
-
-
- 

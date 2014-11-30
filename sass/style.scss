@@ -17,6 +17,7 @@
 
 @import 'mixins';
 @import 'variables';
+@import 'swing';
 
 /* =========== main style =========== */
 .wrapper
@@ -24,7 +25,6 @@
 	overflow:auto;
 	background-color: rgba(223,191,92,0.7); // #dfbf5c  ;
 }
-
 
 .box p
 {
@@ -35,13 +35,13 @@
 .masthead
 {
 	width: 100%;
-	background-color: #484848 ;
+	background-color: $greyLike ;
 	text-align: center;
 	color: #dddddd  ;
 	padding-bottom: 1px;
 	padding-top: 1px;
 	@include pagefont;
-	box-shadow: 0 0 5px #fff;
+	box-shadow: 0 0 5px $whiteLike;
 }
 .focal
 {
@@ -51,256 +51,252 @@
 {
 	float: left;
 	display: flex;
-//	flex-flow: row nowrap; /* is default: columns along the main-axis (row) and no wrapping to next lines */
-//  align-items: flex-end; /* bottom */
 	margin-right: 2%;
-	
-//	position: relative;
-//	min-height:100%; 
 }
+
+//******** Col-3 ********//
 
 .col-3
 {
 	flex: 1;
 	@include fMargin;
 	padding-top: 2%;
-	background-color: rgba(60,155,102,0.7); //#3c9b66;
 
 	//@include gradient-col3;
 	width: $col-3-width;
 	float: left;
 	border-radius: 5px;
-//	background-color: grey;
-	color: #484848 ;
+	color: $greyLike ;
 	text-align: center;
 	
-	background-color: rgba(60,155,102,0.7); //#3c9b66;
-    border: 10px solid #fff;
+	background-color: $greenLike;
+//    border: 10px solid $whiteLike;
     overflow: hidden;
     position: relative;
-    box-shadow: 1px 1px 2px #e6e6e6;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);// #e6e6e6;
     cursor: pointer;
-   
-//	background: #fff url(../img/script.svg) no-repeat center center;
-//	background-size:contain;
-//	background-position:50% 50%;
 	
 	@include pagefont;
 	@include fade-transition(background);	
 	
+	img{
+		display: block;
+		position: relative;
+
+		transition: all 0.2s linear;
+		width: 80%;
+		margin: 10%;
+		height: 100%;
+	}
+	
+	h3
+	{
+		text-transform: uppercase;
+		color: $whiteLike;
+		text-align: center;
+		position: relative;
+		font-size: 17px;
+		//font-family: Raleway, serif;
+		padding: 10px;
+		background: rgba(0, 0, 0, 0.8);
+		margin: 20px 0 0 0;
+
+		transform: translateY(-100px);
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+	}
+	
+	p{
+		font-size: 14px;
+		position: relative;
+		color: $whiteLike;
+		padding-top: 2%;
+		text-align: center;
+		transform: translateY(100px);
+		opacity: 0;
+		transition: all 0.2s linear;
+	}
+	
+	a.info{
+		display: inline-block;
+		text-decoration: none;
+		padding: 7px 14px;
+		background: #000;
+		color: $whiteLike;
+		font-family: Raleway, serif;
+		text-transform: uppercase;
+		box-shadow: 0 0 1px #000;
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+		
+		&:hover
+		{
+			 box-shadow: 0 0 5px #000;
+		}
+	}
+	
+	&:hover
+	{
+		background-color: $blueLike;
+		
+		.iconic
+		{
+			@include swingAnimation;
+		}
+		
+		img{
+			transform: scale(1.1);
+		}
+		.mask
+		{
+			opacity: 1;
+		}
+		h3
+		{
+			opacity: 1;
+			transform: translateY(0px);
+		}
+		p{
+			opacity: 1;
+			transform: translateY(0px);
+			transition-delay: 0.1s;
+		}
+		a.info
+		{
+			opacity: 1;
+			transform: translateY(0px);
+			transition-delay: 0.2s;
+		}
+	}
 }
+
+//******** Col-4 ********//
 .col-4
 {
 	flex: 1;	
 	@include fMargin;
-	background-color: rgba(60,155,102,0.7); //5f98c6; 
-	//@include gradient-col4;
+	background-color: $greenLike;
 	width: $col-4-width;
-//	float: left;
 	margin-bottom: 2%;
+	padding-bottom: 1%;
 	border-radius: 5px;
-	color: #484848 ;
+	color: $greyLike ;
 	text-align: center;
 	@include pagefont;
-	border: 5px solid #fff;
-	
+//	border: 5px solid $whiteLike;
+	box-shadow: inset 1px 1px 2px rgba(0,0,0,.5);
+	font-size: 15px;
+	cursor: pointer;
 	@include fade-transition(background);
-
-}
-
-.btn
-{
-	@include buttonGradient;
-	margin-bottom: 5%;
-//	width: 70%;
-//	margin-left: 15%;
-//	margin-right: 15%
-}
-
-.btn:hover{
-	-webkit-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-     -khtml-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-       -moz-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-         -o-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-            box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
 	
-	color:#fff;
-    background-position:0 0, 0 0;
-    -webkit-transition-duration:0.3s;
-       -moz-transition-duration:0.3s;
-            transition-duration:0.3s;
-}
-
-.col-4:hover,
-.col-3:hover
-{
-	background-color: rgba(95,152,198,0.9);
-}
-
-
-.swing{
-	-webkit-animation:swinging 10s ease-in-out 0s infinite;
-	-moz-animation:swinging 10s ease-in-out 0s infinite;
-	animation:swinging 10s ease-in-out 0s infinite;
-	-webkit-transform-origin:50% 0;
-	-moz-transform-origin:50% 0;
-	transform-origin:50% 0;
-}
-
-@-webkit-keyframes swinging{
-	0% { -webkit-transform: rotate(0); }
-	20% { -webkit-transform: rotate(7deg); }
-	40% { -webkit-transform: rotate(-5deg); }
-	60% { -webkit-transform: rotate(3deg); }
-	80% { -webkit-transform: rotate(-1); } /* Come to rest at 50%. The rest is just stillness */
-	100% { -webkit-transform: rotate(0); }
-}
-
-@-moz-keyframes swinging{
+	h4
+	{
+		text-transform: uppercase;
+		padding:11px 0px 16px 0px;
+		text-align:center;
+		background: transparent;
+		/* Old browsers */
+		background: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 0.8) 50%);
+		background-size: 200% 100%;
+		background-position:left bottom;
+		transition:all .15s ease;
+	}
 	
-	0% { -moz-transform: rotate(0); }
-	20% { -moz-transform: rotate(7deg); }
-	40% { -moz-transform: rotate(-5deg); }
-	60% { -moz-transform: rotate(3deg); }
-	80% { -moz-transform: rotate(-1); } /* Come to rest at 50%. The rest is just stillness */
-	100% { -moz-transform: rotate(0); }
+	&:hover
+	{
+		background-color: $blueLike;
+		
+		.fill-btn
+		{
+			color: whitesmoke;
+			
+			&:before
+			{
+				top: 0;
+			}
+		}
+		h4
+		{
+			color: $whiteLike;
+			background-position:right bottom;
+		}
+		p{
+			color: $whiteLike;
+			@include fade-transition(color);
+		}
+	}
 }
 
-@keyframes swinging{
+// Button
 
-	0% { transform: rotate(0); }
-	20% { transform: rotate(7deg); }
-	40% { transform: rotate(-5deg); }
-	60% { transform: rotate(3deg); }
-	80% { transform: rotate(-1); } /* Come to rest at 50%. The rest is just stillness */
-	100% { transform: rotate(0); }
-}
-
-.col-3:hover > .iconic
-{
-	//Animation delay
-	animation-delay: 0.05s;
-	-webkit-animation-delay: 0.05s;
-	-moz-animation-delay: 0.05s;
-	animation-delay: 0.05s;
+.fill-btn {
+  position: relative;
+  //display:block;
+  height: auto;
+  width: auto;
+  margin: 10px 7px;
+  padding: 5px 5px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: $greyLike;
+  border: 2px $greyLike solid;
+  border-radius: 4px;
+//  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  cursor: pointer;
+  transition:         0.08s ease-in;
+  -o-transition:      0.08s ease-in;
+  -ms-transition:     0.08s ease-in;
+  -moz-transition:    0.08s ease-in;
+  -webkit-transition: 0.08s ease-in;
 	
-	//Add key frame animation for swinging
-	-webkit-animation:swinging 1s ease-in-out 0s infinite;
-	-moz-animation:swinging 1s ease-in-out 0s infinite;
-	animation:swinging 1s ease-in-out 0s infinite;
-	-webkit-transform-origin:50% 0;
-	-moz-transform-origin:50% 0;
-	transform-origin:50% 0;
-
-	//Run the keyframe animation only once
-	-webkit-animation: swinging 0.5s normal forwards; 
-  	-moz-animation:  swinging 0.5s normal forwards;
-  	-o-animation:  swinging 0.5s normal forwards;
+	&:before
+	{
+	  content: "";
+	  position: absolute;
+	  background: $greyLike;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  top: 100%;
+	  z-index: -1;
+	  -webkit-transition: top 0.09s ease-in;
+	}
 }
-
-.col-3 img {
-    display: block;
-    position: relative;
-	
-	transition: all 0.2s linear;
-    width: 80%;
-	margin: 10%;
-    height: 100%;
-}
-.col-3 h3 {
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    font-size: 17px;
-    //font-family: Raleway, serif;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    margin: 20px 0 0 0;
-	
-	transform: translateY(-100px);
-    opacity: 0;
-//    font-family: Raleway, serif;
-    transition: all 0.2s ease-in-out;
-}
-.col-3 p {
-    //font-family: Merriweather, serif;
-    //font-style: italic;
-    font-size: 14px;
-    position: relative;
-    color: #fff;
-//    padding: 0px 20px 0px;
-	padding-top: 2%;
-    text-align: center;
-	
-	transform: translateY(100px);
-    opacity: 0;
-    transition: all 0.2s linear;
-}
-.col-3 a.info {
-    display: inline-block;
-    text-decoration: none;
-    padding: 7px 14px;
-    background: #000;
-    color: #fff;
-    font-family: Raleway, serif;
-    text-transform: uppercase;
-    box-shadow: 0 0 1px #000;
-	opacity: 0;
-    transition: all 0.2s ease-in-out;
-}
-.col-3 a.info:hover {
-    box-shadow: 0 0 5px #000;
-}
-/* */
-
-.col-3:hover img { 
-    transform: scale(1.1);
-} 
-.col-3:hover .mask { 
-    opacity: 1;
-}
-.col-3:hover h3,
-.col-3:hover p,
-.col-3:hover a.info {
-    opacity: 1;
-    transform: translateY(0px);
-}
-.col-3:hover p {
-    transition-delay: 0.1s;
-}
-.col-3:hover a.info {
-    transition-delay: 0.2s;
-}
-
-///
 
 /******** responsive layout *******/
 
-@media screen and (min-width: $breakpoint-mobile){
-  .container{
-    max-width: $breakpoint-mobile;
-    margin: 0 auto;
+//@media screen and (min-width: $breakpoint-mobile){
+//  .container{
+//    max-width: $breakpoint-mobile;
+//    margin: 0 auto;
+//  }
+//}
+//
+//@media screen and (min-width: $breakpoint-small){
+//  .container{
+//    max-width: $breakpoint-small;
+//  }
+//}
+
+@media screen and (min-width:800){
+  .col-40
+	  @include fMargin;
+	  width: 30%; 
+	  padding-top: 2%;
+	  float: left;
   }
 }
 
-@media screen and (min-width: $breakpoint-small){
-  .container{
-    max-width: $breakpoint-small;
-  }
-}
-
-@media screen and (min-width: $breakpoint-medium){
-  .container{
-    max-width: $breakpoint-medium;
-  }
-}
-
-@media screen and (min-width: $breakpoint-large){
-  .container{
-    max-width: $breakpoint-large;
-  }
-}
+//@media screen and (min-width: $breakpoint-large){
+//  .container{
+//    max-width: $breakpoint-large;
+//  }
+//}
 
 /* =========== sticky footer =========== */
 
